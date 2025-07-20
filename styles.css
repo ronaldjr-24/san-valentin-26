@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #3a1523;
+  color: #4e004e;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* 🎈 Mensaje "Happy Birthday" */
+#mensajeHappy {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em;
+  font-weight: bold;
+  color: #28a745;
+  opacity: 0;
+  z-index: 2;
+  animation:
+    aparecerTexto 3s ease-in-out forwards,
+    flotar 3s ease-in-out infinite,
+    parpadear 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
+}
+
+@keyframes aparecerTexto {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes parpadear {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: #bd5b7b;
+  border-radius: 20px;
+  border: 5px dashed #ff69b4;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  margin-top: 120px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #d60087;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #c71585;
+}
+
+.foto {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #560a30;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #ff69b4;
+  color: rgb(73, 6, 73);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+.carta {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background: #ad4bba;
+  border: 3px solid #d60087;
+  border-radius: 15px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: left;
+  box-shadow: 0 0 15px #ff69b4;
+}
+
+.media {
+  margin-top: 30px;
+}
+
+video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+.imagenes-extra {
+  margin-top: 20px;
+}
+
+.iconito {
+  width: 100px;
+  margin: 10px;
+}
+
+/* 🎞️ Galería de fotos */
+.galeria {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.foto-galeria {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff69b4;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: aparecer 1.5s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
