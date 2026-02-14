@@ -150,7 +150,7 @@ video {
   width: 200px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 0 15px #ff69b4;
+  box-shadow: 0 0 15px #d48fb2;
   opacity: 0;
   transform: scale(0.9);
   animation: aparecer 1.5s ease forwards;

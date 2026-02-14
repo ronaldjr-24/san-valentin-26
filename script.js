@@ -50,3 +50,9 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+// 🎵 Música automática
+window.addEventListener("load", function () {
+  const musica = document.getElementById("musica");
+  musica.volume = 0.3;
+  musica.play().catch(() => {});
+});
